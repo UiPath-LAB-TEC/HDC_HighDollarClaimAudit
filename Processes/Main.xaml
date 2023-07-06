@@ -1,0 +1,252 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.in_MaxItems_DummyData="75" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_MaxItems_DummyData" Type="InArgument(x:Int32)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>913,1517</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="547,1452" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_ClaimData" />
+      <Variable x:TypeArguments="x:String" Name="downloadedClaimFile" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_MemberInfo" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_ClaimInfo" />
+      <Variable x:TypeArguments="x:String" Name="claimID" />
+      <Variable x:TypeArguments="x:String" Name="providerID" />
+      <Variable x:TypeArguments="x:String" Name="providerName" />
+      <Variable x:TypeArguments="x:String" Name="memberID" />
+      <Variable x:TypeArguments="x:String" Name="patientName" />
+      <Variable x:TypeArguments="x:Double" Name="claimTotal" />
+      <Variable x:TypeArguments="x:String" Name="memberDOB" />
+      <Variable x:TypeArguments="x:String" Name="memberAddress" />
+      <Variable x:TypeArguments="x:String" Name="providerTIN" />
+      <Variable x:TypeArguments="x:String" Name="providerNPI" />
+      <Variable x:TypeArguments="x:String" Name="providerAddress" />
+      <Variable x:TypeArguments="x:String" Name="claimDates" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Get Member Info" sap:VirtualizedContainerService.HintSize="485,396" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="MemberLookup.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="423,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="MemberLookup.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_MemberInfo">[dt_MemberInfo]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_ClaimID">[claimID]</OutArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_MemberID">20745440</InArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_MemberAddress">[memberAddress]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_MemberDOB">[memberDOB]</OutArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="423,132" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+        <ui:MultipleAssign.AssignOperations>
+          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[memberID]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">[dt_MemberInfo.rows(0)("MemberID").ToString]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[patientName]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">[dt_MemberInfo.rows(0)("Last Name").ToString + ", " + dt_MemberInfo.rows(0)("First Name").ToString]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+          </scg:List>
+        </ui:MultipleAssign.AssignOperations>
+      </ui:MultipleAssign>
+    </Sequence>
+    <Sequence DisplayName="Download Claim Document" sap:VirtualizedContainerService.HintSize="485,224" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="RetrieveClaimDocument.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="RetrieveClaimDocument.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="in_ClaimID">[claimID]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_ClaimDownloadPath">\Demo\Claims Audit\Downloaded Claims\</InArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_DownloadedClaimFilePath">[downloadedClaimFile]</OutArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+    </Sequence>
+    <Sequence DisplayName="Extract Data from Claim Document" sap:VirtualizedContainerService.HintSize="485,224" sap2010:WorkflowViewState.IdRef="Sequence_4">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ExtractClaimData.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="ExtractClaimData.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_ClaimData">[dt_ClaimData]</OutArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_DownloadedClaimFile">[downloadedClaimFile]</InArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_ProviderName">[providerName]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_ProviderID">[providerID]</OutArgument>
+          <OutArgument x:TypeArguments="x:Double" x:Key="out_ClaimTotal">[claimTotal]</OutArgument>
+          <InArgument x:TypeArguments="x:Boolean" x:Key="in_UseDummyData">True</InArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_ProviderTIN">[providerTIN]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_ProviderNPI">[providerNPI]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_ProviderAddress">[providerAddress]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_ClaimDates">[claimDates]</OutArgument>
+          <InArgument x:TypeArguments="x:Int32" x:Key="in_MaxItems_DummyData">[in_MaxItems_DummyData]</InArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+    </Sequence>
+    <Sequence DisplayName="Report Discrepancies" sap:VirtualizedContainerService.HintSize="485,377" sap2010:WorkflowViewState.IdRef="Sequence_5">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="sd:DataTable" Name="dt_LookupDetails" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DetermineOverpayments.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="DetermineOverpayments.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_ClaimData">[dt_ClaimData]</InArgument>
+          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_LookupDetails">[dt_LookupDetails]</OutArgument>
+          <InArgument x:TypeArguments="x:Int32" x:Key="in_ApprovalThresholdPct">10</InArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CreateClaimAuditAction.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="CreateClaimAuditAction.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="in_ClaimID">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="claimID" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_ProviderName">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="providerName" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_MemberId">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="memberID" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_PatientName">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="patientName" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:Boolean" x:Key="useDummyData">
+            <Literal x:TypeArguments="x:Boolean" Value="True" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:Double" x:Key="in_ClaimTotal">
+            <VisualBasicValue x:TypeArguments="x:Double" ExpressionText="claimTotal" />
+          </InArgument>
+          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_LookupDetails">
+            <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_LookupDetails" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_MemberDOB">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="memberDOB" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_MemberAddress">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="memberAddress" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_ProviderTIN">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="providerTIN" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_ProviderNPI">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="providerNPI" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_ProviderAddress">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="providerAddress" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_ClaimDates">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="claimDates" />
+          </InArgument>
+          <OutArgument x:TypeArguments="x:Int32" x:Key="out_discrepancyCount" />
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+    </Sequence>
+  </Sequence>
+</Activity>

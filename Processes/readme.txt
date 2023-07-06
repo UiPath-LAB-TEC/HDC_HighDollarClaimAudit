@@ -1,0 +1,3 @@
+1. In Orchestrator, create a Storage Bucket called "Claims Audit" in the folder to which you'll deploy this automation.
+2. In Action Center Admin Settings, create an Action Catalog called "Claims Audit" in the folder to which you'll deploy this automation.
+3. In Chrome, make sure the UiPath extension is allowed in Incognito mode (go to chrome://extensions), click "Details" on the "UiPath Browser Automation" extension and enable "Allow in Incognito")
