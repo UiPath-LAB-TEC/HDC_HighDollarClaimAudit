@@ -115,7 +115,7 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DetermineOverpayments" sap:VirtualizedContainerService.HintSize="764,2876" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="DetermineOverpayments" sap:VirtualizedContainerService.HintSize="1022,2118" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Double" Default="10" Name="autoRejectionThreshold" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_LookupExport" />
@@ -126,562 +126,609 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BuildDataTable DataTable="[out_dt_LookupDetails]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="702,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_4" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;service_code&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;service_date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;procedure_description&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;contracted_description&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;charged_amount&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;contracted_amount&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;difference&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;difference_pct&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;matches&quot; msdata:Caption=&quot;&quot; type=&quot;xs:boolean&quot; /&gt;&#xA;                &lt;xs:element name=&quot;approve&quot; msdata:Caption=&quot;&quot; type=&quot;xs:boolean&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Chrome: healthcare-solutions.westeurope.cloudapp.azure.com:8083/forms/PricingMaster" sap:VirtualizedContainerService.HintSize="702,1946" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" IsIncognito="True" OpenMode="Always" ScopeGuid="111f1a72-3dd5-4547-835c-19583d98de90" Version="V2">
+    <ui:BuildDataTable DataTable="[out_dt_LookupDetails]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="1022,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_4" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;service_code&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;service_date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;procedure_description&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;contracted_description&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;charged_amount&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;contracted_amount&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;difference&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;difference_pct&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;matches&quot; msdata:Caption=&quot;&quot; type=&quot;xs:boolean&quot; /&gt;&#xA;                &lt;xs:element name=&quot;approve&quot; msdata:Caption=&quot;&quot; type=&quot;xs:boolean&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Chrome: healthcare-solutions.westeurope.cloudapp.azure.com:8083/forms/PricingMaster" sap:VirtualizedContainerService.HintSize="1022,1341" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" IsIncognito="True" OpenMode="Always" ScopeGuid="111f1a72-3dd5-4547-835c-19583d98de90" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_ClaimData]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="668,1729" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
-            <ui:ForEachRow.Body>
-              <ActivityAction x:TypeArguments="sd:DataRow">
-                <ActivityAction.Argument>
-                  <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
-                </ActivityAction.Argument>
-                <Sequence DisplayName="Determine Item Overpayment" sap:VirtualizedContainerService.HintSize="634,1612" sap2010:WorkflowViewState.IdRef="Sequence_2">
-                  <Sequence.Variables>
-                    <Variable x:TypeArguments="sd:DataTable" Name="dt_PaymentDetails" />
-                    <Variable x:TypeArguments="x:Boolean" Name="recordsFound" />
-                    <Variable x:TypeArguments="sd:DataTable" Name="dt_LookupMatch" />
-                    <Variable x:TypeArguments="x:String" Name="hcpcsCode" />
-                    <Variable x:TypeArguments="x:String" Name="serviceDate" />
-                    <Variable x:TypeArguments="x:String" Name="procedureDescription" />
-                    <Variable x:TypeArguments="x:Double" Name="chargedAmount" />
-                    <Variable x:TypeArguments="x:Double" Default="0" Name="contractedAmount" />
-                  </Sequence.Variables>
+          <Sequence sap:VirtualizedContainerService.HintSize="988,1092" sap2010:WorkflowViewState.IdRef="Sequence_13">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NCheckState DisplayName="Check App State 'Continue to site'" sap:VirtualizedContainerService.HintSize="954,493" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="111f1a72-3dd5-4547-835c-19583d98de90" Timeout="5" Version="V3">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,244" sap2010:WorkflowViewState.IdRef="Sequence_14">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="450,194" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
-                    <ui:MultipleAssign.AssignOperations>
-                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
-                          <ui:AssignOperation.To>
-                            <OutArgument x:TypeArguments="x:String">[hcpcsCode]</OutArgument>
-                          </ui:AssignOperation.To>
-                          <ui:AssignOperation.Value>
-                            <InArgument x:TypeArguments="x:String">[CurrentRow("hcpcs_code").ToString]</InArgument>
-                          </ui:AssignOperation.Value>
-                        </ui:AssignOperation>
-                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
-                          <ui:AssignOperation.To>
-                            <OutArgument x:TypeArguments="x:String">[serviceDate]</OutArgument>
-                          </ui:AssignOperation.To>
-                          <ui:AssignOperation.Value>
-                            <InArgument x:TypeArguments="x:String">[CurrentRow("service_date").ToString]</InArgument>
-                          </ui:AssignOperation.Value>
-                        </ui:AssignOperation>
-                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
-                          <ui:AssignOperation.To>
-                            <OutArgument x:TypeArguments="x:String">[procedureDescription]</OutArgument>
-                          </ui:AssignOperation.To>
-                          <ui:AssignOperation.Value>
-                            <InArgument x:TypeArguments="x:String">[CurrentRow("procedure_description").ToString]</InArgument>
-                          </ui:AssignOperation.Value>
-                        </ui:AssignOperation>
-                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
-                          <ui:AssignOperation.To>
-                            <OutArgument x:TypeArguments="x:Double">[chargedAmount]</OutArgument>
-                          </ui:AssignOperation.To>
-                          <ui:AssignOperation.Value>
-                            <InArgument x:TypeArguments="x:Double">[Double.Parse(CurrentRow("amount").ToString)]</InArgument>
-                          </ui:AssignOperation.Value>
-                        </ui:AssignOperation>
-                      </scg:List>
-                    </ui:MultipleAssign.AssignOperations>
-                  </ui:MultipleAssign>
-                  <Sequence DisplayName="Look up Code" sap:VirtualizedContainerService.HintSize="572,1171" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DelayAfter="1" DelayBefore="1" DisplayName="Click 'Continue to site'" sap:VirtualizedContainerService.HintSize="416,182" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="111f1a72-3dd5-4547-835c-19583d98de90" Timeout="7" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="184, 499, 124, 34" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Continue to site'" FullSelectorArgument="&lt;ctrl name='Site is not secure' role='document' /&gt;&lt;ctrl name='Continue to site' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Site is not secure' role='document' /&gt;&lt;ctrl name='Continue to site' role='push button' automationid='' check:text='Continue to site' /&gt;" Guid="b24b74c0-9450-4543-b402-caf2bf0436d9" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIAAAAAmCAYAAAAMe5M4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOtSURBVHhe7ZzNUtswFIW75E14D/Z5Ap4EXoRhx5IlCzasWLNkOtMfWtpOgBZooRRoYYBE9ZEt5erq+i9OSOzcO/PNYFuSpXuOFTuReWM0FjrUAAseYxng4cmY8z9Dc3w5MB9/DMy7s4F5e6K8Jsg5cg8NLhItoMk4UcsA1/dDe1KpQ8rsgTbQqE5UMsDNXxW+TUCrm3/VjFBoADRxej0UT6LMP9CuzAa5BngeGPP5Qm5YaQ/Q8CXRMi9EA8A1xyp+Z4CWeTOBaIDTK532u8ZZ8nEgRWSAuwcjNqC0H2jLIzLAkd7td5ZP5/HNQGAAPO5JFZXuAI1pBAb48F2upHQHaEzDG+DxWT/7F4Wnl0z0JLwBft21bPo/2DfLK9tm/UA41iL2NrbN0uq+2ROOTYsr8nWxN8DJxB79Dk1vZcsseXbNpliuJju7r56oiKn3oW/WV7dMb0c6NjmgtQtvgC+XcuFaIEGJ6MEAkiu1t9EPy42DGmBiQGsX3gDNbwBx5ZdNyWx2WDscHbNTejJbZCYCy5lx7DRJ6tkEufIldcHmGksqykXndu3LM5bYh2h/8fiDstn57T77N8uNNxrdP5mPPHoj6A0gFaxF6dWRupsL47edCE4Yu00GzNuPDJBft9gAzLhF4+DHsE0NQ/vEyWl3ZABs8xmAbRe1XxMX3gDvmy7qCJIqICUAA3L7osGxwfP6tHxJ3SIDhAIAGKKKiFyslOhcjhzxCg0Q5QzHm88C0NqFNwC+JZIKV0YSmEKSPoIkW0hQkEzefqEBwrqlBvBTrCMnyUEfZDHQHp3lAlDftj/qa6kBor6xsYwB/UbQG+DrT7lwddhUyuECAgjn9s3QALmCcYI+1JwBKKSdUgNEF01zviVau/AGwLoyqXAd0quJmSARJ30KSG9miu8BpmOAMMlpP/y2rVtxWmV9SMdLziv0Q4SUKzRA1tdSQ9Xk8lZ4DJzYN4FIUjZVWahoLvkZwZVXIqJLDurZfbR8aV163qQcv7J4n3OvOtaHZF9qAlc37ENAcI6R4UIDkHIub3Zsrh7Z3wBo7cIbAKHr/roP/0UwMID+Gth9Cn8NRBw1fRpQ5hYsDeMRGUBXBHWX+8dMZBKRARBYPyY1oLSXymsCESiKV46khpT2UXtVMALvBegKofYDDWu/F+ACrunrEvHW0ujNIBq4MWz8W4HyauBJ7lZYAi5FJQO4+K0vic41U3s7mAfeRcdvB/r/AWbHTP4/gEb3Qg2w4KEGWOgw5j/sXslYwPEj9gAAAABJRU5ErkJggg==" InformativeScreenshot="27339f60b1177392c7306ee3165eeefb.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Site is not secure - Google Chrome' /&gt;" SearchSteps="Selector, FuzzySelector, Image" SelectionStrategy="AA" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="184, 212, 72, 73" FriendlyName="'grouping'" FullSelectorArgument="&lt;ctrl name='Site is not secure' role='document' /&gt;&lt;ctrl idx='3' role='grouping' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Site is not secure' role='document' /&gt;&lt;ctrl automationid='' role='grouping' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEwAAABNCAYAAAAMy4KOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAVNSURBVHhe7ZzJS+tAHMfffyeKK4oristBERHBgwdvLuDFBUXcUFHcUHEXEVEvehAXFMEdcQH3DfSgos7j2zf1tc2knUkmaaftB77gaybTn583SaaT1D8kjBBhYYIEnLC9vT2yvLxMxsfHycDAAJmdnSUrKyvk+PiYtvAvGmGvr6/0J/tYXV0lVVVVJCEhgUREROgmKSmJVFdXk+3tbbqn/bgJGxwcJOnp6eTq6oq+Yi0YRRkZGUw5vgJx9/f3tCf7+BXW39//Wwx+iZubG7pFPui7pKTETYCRxMXF2T7afoV5FmOVtMvLS8eh5fl+RhMZGUkWFhZo79ajKwyBNJmH5+3trddDMDExkVRUVJDh4WHHiX9jY4PMzMyQ1tZWUlBQwNzHmbm5Ofou1vIrrLe3l1mIrJH2+flJCgsLme+BETc5OUm+vr5oazZnZ2ekrKyM2QdG2ubmJm1pHW4n/e7ubmYxMkZae3s7s+/S0lLy/PxMW/GBUcfqC1fZp6cn2soa3ISBrq4uZjFmpN3d3TH7rKyspC3EwXwtNjZW02dDQwNtYQ0aYaCjo0NTCAJp19fXtBU/rMMdI8ss6+vrmn6R8/Nz2kI+TGEAJ1pWMZiniUpLS0vT9IOrpQxqa2s1fePUYhW6wkBLS4umGEREGtp57o9fUhaYvHr2n5+fT7fKx6sw0NzcrCkI4ZW2tLSk2XdtbY1ulQNrEix6IeHFpzDQ1NSkKQjhkfb4+EiysrLc9nt/f6db5dDT0+PWP4KLghVwCQONjY2aohCeeRqkOs9jycnJ9FV5zM/Pa+rCCocVcAsD9fX1msIQnpF2cXHhmMnn5ubSV+TBulpOT0/TrXIREvbz88O8KiE8I+309JQUFxfTf8lja2tLUw9WQqxASJiTuro6TYEIzzzNig/0LGETExN0q1wMCcNIq6mp0RSJ8Iw02QT8CAPf398BI00JYSBQpCkjDEAaPkR7FozYJU0pYcDf0pQS9vDw4FhSwYTUs2hneKRhZo41etb+slNUVER2d3fpO4thStjh4SH3+jyvNNYal1UxsqxtSlheXh6zEL3wSNvf37dtpCGit+oMC9NbvPMVfIwKpJGGGy4iGBY2OjrKLIAnmZmZjmVrb9h1TsNKjAiGheEuOasA3mDJx9fhcHBwYLk0LCiI4DdhSCBIU0oY4m9pyglD/ClNSWGIv6QpKwzxhzSlhSF2S1NeGGKntKAQhtglLWiEIXZICyphiNXSlBam99wrjzSschj5wK6sMDySCcbGxpjbrZKmrDDXxy2HhoaYbayQpqSwmJgY2ut/9J65lS1NSWGQwKKzs1O3va/1NFwI4uPjmfu7RvQRz4AQlpKSQnvVovfUEM9I47l6KnsOw3NkelgpTVlhvp5L1XtqiFea3he/lBUWFRXl9St+3h6A4ZF2cnLClKasMAT3OHd2dug7uPPy8kLKy8uZ+yE80vAf4ilNyZO+ZzDjxxUSUwsE36WMjo5mtnVNdna2T2lHR0duV8+gEGYmooen0oekrIhICwuj4ZWGL42JELTCEJ5z2sfHB/2Jj6AWhvCMNBGCXhgiU1pICENkSQsZYYgMaSElDDErLeSEIWakhaQwxKg0w8JGRkaYhagUzNO8rcOxMCwM36plFaFacnJyhKQZFvb29sa1Zq5CRKQZFgbwbQtWASqGV5opYWBqasr0AyF2JzU1lfk6jzTTwpzg71BgtVSFAL2bxb6kSROmIn19fcLSQloY0LtZrCct5IUBvb8Aw5IWFkZpa2vTleZKWJgLnnfY8UfcFhcX6dZ/hIUJEhYmSFiYEIT8BRbNshvDhv9LAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,91" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="184, 499, 124, 34" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Continue to site'" FullSelectorArgument="&lt;ctrl name='Site is not secure' role='document' /&gt;&lt;ctrl name='Continue to site' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Site is not secure' role='document' /&gt;&lt;ctrl name='Continue to site' role='push button' automationid='' check:text='Continue to site' /&gt;" Guid="f7e22776-0e46-4fa4-a25d-3e1ffee0d67e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIAAAAAmCAYAAAAMe5M4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOtSURBVHhe7ZzNUtswFIW75E14D/Z5Ap4EXoRhx5IlCzasWLNkOtMfWtpOgBZooRRoYYBE9ZEt5erq+i9OSOzcO/PNYFuSpXuOFTuReWM0FjrUAAseYxng4cmY8z9Dc3w5MB9/DMy7s4F5e6K8Jsg5cg8NLhItoMk4UcsA1/dDe1KpQ8rsgTbQqE5UMsDNXxW+TUCrm3/VjFBoADRxej0UT6LMP9CuzAa5BngeGPP5Qm5YaQ/Q8CXRMi9EA8A1xyp+Z4CWeTOBaIDTK532u8ZZ8nEgRWSAuwcjNqC0H2jLIzLAkd7td5ZP5/HNQGAAPO5JFZXuAI1pBAb48F2upHQHaEzDG+DxWT/7F4Wnl0z0JLwBft21bPo/2DfLK9tm/UA41iL2NrbN0uq+2ROOTYsr8nWxN8DJxB79Dk1vZcsseXbNpliuJju7r56oiKn3oW/WV7dMb0c6NjmgtQtvgC+XcuFaIEGJ6MEAkiu1t9EPy42DGmBiQGsX3gDNbwBx5ZdNyWx2WDscHbNTejJbZCYCy5lx7DRJ6tkEufIldcHmGksqykXndu3LM5bYh2h/8fiDstn57T77N8uNNxrdP5mPPHoj6A0gFaxF6dWRupsL47edCE4Yu00GzNuPDJBft9gAzLhF4+DHsE0NQ/vEyWl3ZABs8xmAbRe1XxMX3gDvmy7qCJIqICUAA3L7osGxwfP6tHxJ3SIDhAIAGKKKiFyslOhcjhzxCg0Q5QzHm88C0NqFNwC+JZIKV0YSmEKSPoIkW0hQkEzefqEBwrqlBvBTrCMnyUEfZDHQHp3lAlDftj/qa6kBor6xsYwB/UbQG+DrT7lwddhUyuECAgjn9s3QALmCcYI+1JwBKKSdUgNEF01zviVau/AGwLoyqXAd0quJmSARJ30KSG9miu8BpmOAMMlpP/y2rVtxWmV9SMdLziv0Q4SUKzRA1tdSQ9Xk8lZ4DJzYN4FIUjZVWahoLvkZwZVXIqJLDurZfbR8aV163qQcv7J4n3OvOtaHZF9qAlc37ENAcI6R4UIDkHIub3Zsrh7Z3wBo7cIbAKHr/roP/0UwMID+Gth9Cn8NRBw1fRpQ5hYsDeMRGUBXBHWX+8dMZBKRARBYPyY1oLSXymsCESiKV46khpT2UXtVMALvBegKofYDDWu/F+ACrunrEvHW0ujNIBq4MWz8W4HyauBJ7lZYAi5FJQO4+K0vic41U3s7mAfeRcdvB/r/AWbHTP4/gEb3Qg2w4KEGWOgw5j/sXslYwPEj9gAAAABJRU5ErkJggg==" InformativeScreenshot="a7fc72fd9f126415112f166193d2d22f.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Site is not secure - Google Chrome' /&gt;" SearchSteps="Selector, FuzzySelector" SelectionStrategy="AA" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="184, 212, 72, 73" FriendlyName="'grouping'" FullSelectorArgument="&lt;ctrl name='Site is not secure' role='document' /&gt;&lt;ctrl idx='3' role='grouping' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Site is not secure' role='document' /&gt;&lt;ctrl automationid='' role='grouping' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEwAAABNCAYAAAAMy4KOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAVNSURBVHhe7ZzJS+tAHMfffyeKK4oristBERHBgwdvLuDFBUXcUFHcUHEXEVEvehAXFMEdcQH3DfSgos7j2zf1tc2knUkmaaftB77gaybTn583SaaT1D8kjBBhYYIEnLC9vT2yvLxMxsfHycDAAJmdnSUrKyvk+PiYtvAvGmGvr6/0J/tYXV0lVVVVJCEhgUREROgmKSmJVFdXk+3tbbqn/bgJGxwcJOnp6eTq6oq+Yi0YRRkZGUw5vgJx9/f3tCf7+BXW39//Wwx+iZubG7pFPui7pKTETYCRxMXF2T7afoV5FmOVtMvLS8eh5fl+RhMZGUkWFhZo79ajKwyBNJmH5+3trddDMDExkVRUVJDh4WHHiX9jY4PMzMyQ1tZWUlBQwNzHmbm5Ofou1vIrrLe3l1mIrJH2+flJCgsLme+BETc5OUm+vr5oazZnZ2ekrKyM2QdG2ubmJm1pHW4n/e7ubmYxMkZae3s7s+/S0lLy/PxMW/GBUcfqC1fZp6cn2soa3ISBrq4uZjFmpN3d3TH7rKyspC3EwXwtNjZW02dDQwNtYQ0aYaCjo0NTCAJp19fXtBU/rMMdI8ss6+vrmn6R8/Nz2kI+TGEAJ1pWMZiniUpLS0vT9IOrpQxqa2s1fePUYhW6wkBLS4umGEREGtp57o9fUhaYvHr2n5+fT7fKx6sw0NzcrCkI4ZW2tLSk2XdtbY1ulQNrEix6IeHFpzDQ1NSkKQjhkfb4+EiysrLc9nt/f6db5dDT0+PWP4KLghVwCQONjY2aohCeeRqkOs9jycnJ9FV5zM/Pa+rCCocVcAsD9fX1msIQnpF2cXHhmMnn5ubSV+TBulpOT0/TrXIREvbz88O8KiE8I+309JQUFxfTf8lja2tLUw9WQqxASJiTuro6TYEIzzzNig/0LGETExN0q1wMCcNIq6mp0RSJ8Iw02QT8CAPf398BI00JYSBQpCkjDEAaPkR7FozYJU0pYcDf0pQS9vDw4FhSwYTUs2hneKRhZo41etb+slNUVER2d3fpO4thStjh4SH3+jyvNNYal1UxsqxtSlheXh6zEL3wSNvf37dtpCGit+oMC9NbvPMVfIwKpJGGGy4iGBY2OjrKLIAnmZmZjmVrb9h1TsNKjAiGheEuOasA3mDJx9fhcHBwYLk0LCiI4DdhSCBIU0oY4m9pyglD/ClNSWGIv6QpKwzxhzSlhSF2S1NeGGKntKAQhtglLWiEIXZICyphiNXSlBam99wrjzSschj5wK6sMDySCcbGxpjbrZKmrDDXxy2HhoaYbayQpqSwmJgY2ut/9J65lS1NSWGQwKKzs1O3va/1NFwI4uPjmfu7RvQRz4AQlpKSQnvVovfUEM9I47l6KnsOw3NkelgpTVlhvp5L1XtqiFea3he/lBUWFRXl9St+3h6A4ZF2cnLClKasMAT3OHd2dug7uPPy8kLKy8uZ+yE80vAf4ilNyZO+ZzDjxxUSUwsE36WMjo5mtnVNdna2T2lHR0duV8+gEGYmooen0oekrIhICwuj4ZWGL42JELTCEJ5z2sfHB/2Jj6AWhvCMNBGCXhgiU1pICENkSQsZYYgMaSElDDErLeSEIWakhaQwxKg0w8JGRkaYhagUzNO8rcOxMCwM36plFaFacnJyhKQZFvb29sa1Zq5CRKQZFgbwbQtWASqGV5opYWBqasr0AyF2JzU1lfk6jzTTwpzg71BgtVSFAL2bxb6kSROmIn19fcLSQloY0LtZrCct5IUBvb8Aw5IWFkZpa2vTleZKWJgLnnfY8UfcFhcX6dZ/hIUJEhYmSFiYEIT8BRbNshvDhv9LAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_ClaimData]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="954,537" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+              <ui:ForEachRow.Body>
+                <ActivityAction x:TypeArguments="sd:DataRow">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Determine Item Overpayment" sap:VirtualizedContainerService.HintSize="484,395" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="sd:DataTable" Name="dt_PaymentDetails" />
+                      <Variable x:TypeArguments="x:Boolean" Name="recordsFound" />
+                      <Variable x:TypeArguments="sd:DataTable" Name="dt_LookupMatch" />
+                      <Variable x:TypeArguments="x:String" Name="hcpcsCode" />
+                      <Variable x:TypeArguments="x:String" Name="serviceDate" />
+                      <Variable x:TypeArguments="x:String" Name="procedureDescription" />
+                      <Variable x:TypeArguments="x:Double" Name="chargedAmount" />
+                      <Variable x:TypeArguments="x:Double" Default="0" Name="contractedAmount" />
+                    </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayAfter="0" DelayBefore="0" DisplayName="Type Into 'INPUT txtCptCode'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="510,52" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="111f1a72-3dd5-4547-835c-19583d98de90" Text="[hcpcsCode]" Version="V3">
-                      <uix:NTypeInto.Target>
-                        <uix:TargetAnchorable BrowserURL="http://healthcare-solutions.westeurope.cloudapp.azure.com:8083/forms/PricingMaster" DesignTimeRectangle="940, 321, 125, 22" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT txtCptCode'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='txtCptCode' tableRow='1' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='txtCptCode' type='text' tag='INPUT' class='' aaname='' /&gt;" Guid="4a962dfb-05c6-453d-900f-2b5c9e3e4d4d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIEAAAAaCAYAAACQAT/QAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABiSURBVGhD7dIxAYAwEAQwZNULRpBQPQjBAw5YmNvbGAAFnyEOsrS1D2qTgCfBtl8U85ngOG+KkAAJkICQAAmQgJAACZCAkAAJkICQAAmQgJAACZCAkID/BNTySkBdEpTXxwSWCmyEfTT5aQAAAABJRU5ErkJggg==" InformativeScreenshot="9311e32564cb4256d7b47701a6974543.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='healthcare-solutions.westeurope.cloudapp.azure.com:8083/forms/PricingMaster' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive" />
-                      </uix:NTypeInto.Target>
+                    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                      <ui:MultipleAssign.AssignOperations>
+                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[hcpcsCode]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">[CurrentRow("hcpcs_code").ToString]</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[serviceDate]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">[CurrentRow("service_date").ToString]</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[procedureDescription]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">[CurrentRow("procedure_description").ToString]</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:Double">[chargedAmount]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:Double">[Double.Parse(CurrentRow("amount").ToString)]</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                        </scg:List>
+                      </ui:MultipleAssign.AssignOperations>
+                    </ui:MultipleAssign>
+                    <Sequence DisplayName="Look up Code" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="Sequence_6">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                    </uix:NTypeInto>
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="0" DelayBefore="0" DisplayName="Click 'Search'" sap:VirtualizedContainerService.HintSize="510,52" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="111f1a72-3dd5-4547-835c-19583d98de90" Version="V3">
-                      <uix:NClick.Target>
-                        <uix:TargetAnchorable BrowserURL="http://healthcare-solutions.westeurope.cloudapp.azure.com:8083/forms/PricingMaster" CvElementArea="1116, 316, 66, 31" CvTextArea="1126, 325, 46, 13" CvTextArgument="Search" CvType="Button" DesignTimeRectangle="1118, 318, 63, 28" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Search'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='Button1' tableRow='1' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='Button1' type='submit' tag='INPUT' class='button-25' aaname='Search' check:text='Search' /&gt;" Guid="27e49c17-c96a-4f29-887c-2c2af13f5263" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEMAAAAgCAYAAABJqsWHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIeSURBVGhD7ZnNTgIxFIV9HhONIaC8hsaFAV259QU0IguMgNGtK5/BF/AJ2Lhn4cIEdiSzmMUEArn2tPNz2/kzmQSw9CZnwbS37fl6OxC612wPyEnJwWDSYDSu+9TovtJBb0D7vb61gj/4hF/uP4aBhsPHId18fNLb6Jvev36sFfzBJ/xyICEMUREPL7JDVrKtgl/4hv8ERkuVju0VYQp+4Rv+YxgnrSd5lrISbBd8w7+DIeRgMDkYTA4GU2UY44D0WAY0yui3Do38VaX5K8GQIAI//YwWNGbP1qUNwvDJE7a9Wflzucg4VjSdsP6TgOZhiwrejrEWNI3yQ6N54ykYC/KWYZOIue8lc5WoAgyPppi0ZCdSuzVbiKSwckIQCThzTAVWqz6eb3yOIMXjyTYDfoEqwIDCxbLQKwXt6cXgKOXtmA7PrDIF62+5kJlfrIowmLRy13c+K3RDBtRcGMXmtgdGLLZ7EkZRmSYQIjjFlbGtMMyzy5R8y5QsBmNoi/+3xyTnBWpUg1ygBo0tMPNlKCIXRtSH5bD5NghDKfWjK6NazD58cVobjEizEcxsMwpwElH7xmHYJAeDycFgcjCYHAymTBi7/IdwCkb9/nknrwrgW4OBv8prV92dvESCb+2qAJcoxxc9OrrsCFJDWTo4S7YK/uATfuFbv0RiQOrnHaqd3VHt9NZeCX/wyUEYMBQQlAzOkO1SRyMB0WwP6BewH2sbY4r7rQAAAABJRU5ErkJggg==" InformativeScreenshot="9f37a477362422ccb9fef20d88d19e58.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='healthcare-solutions.westeurope.cloudapp.azure.com:8083/forms/PricingMaster' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive" />
-                      </uix:NClick.Target>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </uix:NClick>
-                    <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dt_PaymentDetails]" DelayAfter="0.1" DelayBefore="0.1" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='HCPC Code' ReferenceName='HCPC Code' ReferenceIdx='0'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Code Description' ReferenceName='Code Description' ReferenceIdx='1'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Contracted Fee' ReferenceName='Contracted Fee' ReferenceIdx='2'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Contract Date' ReferenceName='Contract Date' ReferenceIdx='3'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='HCPC Code' attr='fulltext' /&gt;&lt;column name='Code Description' attr='fulltext' /&gt;&lt;column name='Contracted Fee' attr='fulltext' /&gt;&lt;column name='Contract Date' attr='fulltext' /&gt;&lt;/extract-table&gt;" sap:VirtualizedContainerService.HintSize="510,52" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="111f1a72-3dd5-4547-835c-19583d98de90" Version="V3">
-                      <uix:NExtractData.Target>
-                        <uix:TargetAnchorable DesignTimeRectangle="499, 366, 740, 65" DesignTimeScaleFactor="1" FriendlyName="'HCPC CodeCode'" FullSelectorArgument="&lt;webctrl id='gridPrice' tag='TABLE' /&gt;" Guid="50bbf020-cf50-4a23-b77d-09fd16385ffd" InformativeScreenshot="65427b8339b6a3fb2a535abf965e20d9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='healthcare-solutions.westeurope.cloudapp.azure.com:8083/forms/PricingMaster' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                      </uix:NExtractData.Target>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </uix:NExtractData>
-                    <If Condition="[dt_PaymentDetails.Rows(0)(0).Equals(&quot;No Record Found&quot;)]" sap:VirtualizedContainerService.HintSize="510,784" sap2010:WorkflowViewState.IdRef="If_1">
-                      <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="476,301" sap2010:WorkflowViewState.IdRef="Sequence_4">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;No records retreived for HCPCS Code: &quot; + hcpcsCode + &quot;.&quot;]" />
-                          <Assign sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_4">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:Boolean">[recordsFound]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                        </Sequence>
-                      </If.Then>
-                      <If.Else>
-                        <Sequence sap:VirtualizedContainerService.HintSize="476,301" sap2010:WorkflowViewState.IdRef="Sequence_5">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Retreived Records for HCPCS Code &quot; + hcpcsCode + &quot;:&quot; + Environment.NewLine + String.join(&quot;,&quot;,(From dc in dt_PaymentDetails.Columns.Cast(Of System.Data.DataColumn) Select dc.ColumnName).toArray()) + Environment.NewLine + string.join(Environment.NewLine, dt_PaymentDetails.Rows.Cast(of DataRow).Select(function(row) string.join(&quot;,&quot;,row.ItemArray)))]" />
-                          <Assign sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_5">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:Boolean">[recordsFound]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                        </Sequence>
-                      </If.Else>
-                    </If>
-                  </Sequence>
-                  <Flowchart sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="Flowchart_1">
-                    <Flowchart.Variables>
-                      <Variable x:TypeArguments="sd:DataRow" Name="newRow" />
-                      <Variable x:TypeArguments="x:Boolean" Default="False" Name="matchFound" />
-                      <Variable x:TypeArguments="x:String" Name="contractedDescription">
-                        <Variable.Default>
-                          <Literal x:TypeArguments="x:String" Value="" />
-                        </Variable.Default>
-                      </Variable>
-                    </Flowchart.Variables>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
-                        <av:Size x:Key="ShapeSize">60,75</av:Size>
-                        <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,107.5 480,107.5 480,136.5</av:PointCollection>
-                        <x:Double x:Key="Height">960.5</x:Double>
-                        <x:Double x:Key="Width">890</x:Double>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <Flowchart.StartNode>
-                      <x:Reference>__ReferenceID10</x:Reference>
-                    </Flowchart.StartNode>
-                    <FlowDecision x:Name="__ReferenceID10" Condition="[recordsFound]" DisplayName="Records Retrieved?" sap:VirtualizedContainerService.HintSize="105,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <av:Point x:Key="ShapeLocation">427.5,136.5</av:Point>
-                          <av:Size x:Key="ShapeSize">105,87</av:Size>
-                          <av:PointCollection x:Key="TrueConnector">427.5,180 320,180 320,234.00000000000003</av:PointCollection>
-                          <av:PointCollection x:Key="FalseConnector">532.5,180 740,180 740,214</av:PointCollection>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <FlowDecision.True>
-                        <FlowStep x:Name="__ReferenceID4">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <av:Point x:Key="ShapeLocation">220,234.00000000000003</av:Point>
-                              <av:Size x:Key="ShapeSize">200,52</av:Size>
-                              <av:PointCollection x:Key="ConnectorLocation">320,286 320,306.5</av:PointCollection>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <ui:FilterDataTable DataTable="[dt_PaymentDetails]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[dt_LookupMatch]" SelectColumnsMode="Remove">
-                            <ui:FilterDataTable.Filters>
-                              <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
-                                <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
-                                  <ui:FilterOperationArgument.Column>
-                                    <InArgument x:TypeArguments="x:String">["HCPCS Code"]</InArgument>
-                                  </ui:FilterOperationArgument.Column>
-                                  <ui:FilterOperationArgument.Operand>
-                                    <InArgument x:TypeArguments="x:String">[hcpcsCode]</InArgument>
-                                  </ui:FilterOperationArgument.Operand>
-                                </ui:FilterOperationArgument>
-                                <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
-                                  <ui:FilterOperationArgument.Column>
-                                    <InArgument x:TypeArguments="x:String">["Code Description"]</InArgument>
-                                  </ui:FilterOperationArgument.Column>
-                                  <ui:FilterOperationArgument.Operand>
-                                    <InArgument x:TypeArguments="x:String">[procedureDescription]</InArgument>
-                                  </ui:FilterOperationArgument.Operand>
-                                </ui:FilterOperationArgument>
-                              </scg:List>
-                            </ui:FilterDataTable.Filters>
-                            <ui:FilterDataTable.SelectColumns>
-                              <scg:List x:TypeArguments="InArgument" Capacity="4">
-                                <x:Null />
-                              </scg:List>
-                            </ui:FilterDataTable.SelectColumns>
-                          </ui:FilterDataTable>
-                          <FlowStep.Next>
-                            <FlowDecision x:Name="__ReferenceID3" Condition="[dt_LookupMatch.RowCount &gt; 0]" DisplayName="Match Found?" sap:VirtualizedContainerService.HintSize="82,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  <av:Point x:Key="ShapeLocation">279,306.5</av:Point>
-                                  <av:Size x:Key="ShapeSize">82,87</av:Size>
-                                  <av:PointCollection x:Key="TrueConnector">279,350 220,350 220,424</av:PointCollection>
-                                  <av:PointCollection x:Key="FalseConnector">361,350 440,350</av:PointCollection>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                              <FlowDecision.True>
-                                <FlowStep x:Name="__ReferenceID9">
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <av:Point x:Key="ShapeLocation">120,424</av:Point>
-                                      <av:Size x:Key="ShapeSize">200,52</av:Size>
-                                      <av:PointCollection x:Key="ConnectorLocation">220,476 220,526.5</av:PointCollection>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="MultipleAssign_7">
-                                    <ui:MultipleAssign.AssignOperations>
-                                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_43">
-                                          <ui:AssignOperation.To>
-                                            <OutArgument x:TypeArguments="x:Double">[contractedAmount]</OutArgument>
-                                          </ui:AssignOperation.To>
-                                          <ui:AssignOperation.Value>
-                                            <InArgument x:TypeArguments="x:Double">[Double.Parse(dt_LookupMatch.Rows(0)("Contracted Fee").ToString)]</InArgument>
-                                          </ui:AssignOperation.Value>
-                                        </ui:AssignOperation>
-                                        <ui:AssignOperation sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="AssignOperation_44">
-                                          <ui:AssignOperation.To>
-                                            <OutArgument x:TypeArguments="x:String">[contractedDescription]</OutArgument>
-                                          </ui:AssignOperation.To>
-                                          <ui:AssignOperation.Value>
-                                            <InArgument x:TypeArguments="x:String">[dt_LookupMatch.Rows(0)("Code Description").ToString]</InArgument>
-                                          </ui:AssignOperation.Value>
-                                        </ui:AssignOperation>
-                                      </scg:List>
-                                    </ui:MultipleAssign.AssignOperations>
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                  </ui:MultipleAssign>
-                                  <FlowStep.Next>
-                                    <FlowDecision x:Name="__ReferenceID5" Condition="[contractedAmount = chargedAmount]" DisplayName="Amounts Equal?" sap:VirtualizedContainerService.HintSize="92,87" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                          <av:Point x:Key="ShapeLocation">174,526.5</av:Point>
-                                          <av:Size x:Key="ShapeSize">92,87</av:Size>
-                                          <av:PointCollection x:Key="FalseConnector">266,570 450,570 450,699.5</av:PointCollection>
-                                          <av:PointCollection x:Key="TrueConnector">174,570 100,570 100,669.5</av:PointCollection>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                      <FlowDecision.True>
-                                        <FlowStep x:Name="__ReferenceID8">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <av:Point x:Key="ShapeLocation">0,669.5</av:Point>
-                                              <av:Size x:Key="ShapeSize">200,81</av:Size>
-                                              <av:PointCollection x:Key="ConnectorLocation">100,750.5 100,780.5 280,780.5 280,879.5</av:PointCollection>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                          <Sequence DisplayName="Match Found" sap:VirtualizedContainerService.HintSize="496,324" sap2010:WorkflowViewState.IdRef="Sequence_8">
-                                            <sap:WorkflowViewStateService.ViewState>
-                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                              </scg:Dictionary>
-                                            </sap:WorkflowViewStateService.ViewState>
-                                            <Assign sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_6">
-                                              <Assign.To>
-                                                <OutArgument x:TypeArguments="x:Boolean">[matchFound]</OutArgument>
-                                              </Assign.To>
-                                              <Assign.Value>
-                                                <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                                              </Assign.Value>
-                                            </Assign>
-                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Procedure &quot; + hcpcsCode + &quot; (&quot; + procedureDescription + &quot;) amount equal to contracted fee: &quot; + chargedAmount.ToString]">
-                                              <sap:WorkflowViewStateService.ViewState>
-                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                </scg:Dictionary>
-                                              </sap:WorkflowViewStateService.ViewState>
-                                            </ui:LogMessage>
-                                          </Sequence>
-                                          <FlowStep.Next>
-                                            <FlowStep x:Name="__ReferenceID0">
-                                              <sap:WorkflowViewStateService.ViewState>
-                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <av:Point x:Key="ShapeLocation">180,879.5</av:Point>
-                                                  <av:Size x:Key="ShapeSize">200,81</av:Size>
-                                                </scg:Dictionary>
-                                              </sap:WorkflowViewStateService.ViewState>
-                                              <Sequence DisplayName="Add to Export Table" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_9">
-                                                <sap:WorkflowViewStateService.ViewState>
-                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                  </scg:Dictionary>
-                                                </sap:WorkflowViewStateService.ViewState>
-                                                <ui:MultipleAssign DisplayName="Create Data Row" sap:VirtualizedContainerService.HintSize="423,411" sap2010:WorkflowViewState.IdRef="MultipleAssign_9">
-                                                  <ui:MultipleAssign.AssignOperations>
-                                                    <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
-                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_54">
-                                                        <ui:AssignOperation.To>
-                                                          <OutArgument x:TypeArguments="sd:DataRow">[newRow]</OutArgument>
-                                                        </ui:AssignOperation.To>
-                                                        <ui:AssignOperation.Value>
-                                                          <InArgument x:TypeArguments="sd:DataRow">[out_dt_LookupDetails.NewRow()]</InArgument>
-                                                        </ui:AssignOperation.Value>
-                                                      </ui:AssignOperation>
-                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_55">
-                                                        <ui:AssignOperation.To>
-                                                          <OutArgument x:TypeArguments="x:Object">[newRow("service_code")]</OutArgument>
-                                                        </ui:AssignOperation.To>
-                                                        <ui:AssignOperation.Value>
-                                                          <InArgument x:TypeArguments="x:Object">[hcpcsCode]</InArgument>
-                                                        </ui:AssignOperation.Value>
-                                                      </ui:AssignOperation>
-                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_56">
-                                                        <ui:AssignOperation.To>
-                                                          <OutArgument x:TypeArguments="x:Object">[newRow("service_date")]</OutArgument>
-                                                        </ui:AssignOperation.To>
-                                                        <ui:AssignOperation.Value>
-                                                          <InArgument x:TypeArguments="x:Object">[serviceDate]</InArgument>
-                                                        </ui:AssignOperation.Value>
-                                                      </ui:AssignOperation>
-                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_57">
-                                                        <ui:AssignOperation.To>
-                                                          <OutArgument x:TypeArguments="x:Object">[newRow("procedure_description")]</OutArgument>
-                                                        </ui:AssignOperation.To>
-                                                        <ui:AssignOperation.Value>
-                                                          <InArgument x:TypeArguments="x:Object">[procedureDescription]</InArgument>
-                                                        </ui:AssignOperation.Value>
-                                                      </ui:AssignOperation>
-                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_64">
-                                                        <ui:AssignOperation.To>
-                                                          <OutArgument x:TypeArguments="x:Object">[newRow("contracted_description")]</OutArgument>
-                                                        </ui:AssignOperation.To>
-                                                        <ui:AssignOperation.Value>
-                                                          <InArgument x:TypeArguments="x:Object">[contractedDescription]</InArgument>
-                                                        </ui:AssignOperation.Value>
-                                                      </ui:AssignOperation>
-                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_58">
-                                                        <ui:AssignOperation.To>
-                                                          <OutArgument x:TypeArguments="x:Object">[newRow("charged_amount")]</OutArgument>
-                                                        </ui:AssignOperation.To>
-                                                        <ui:AssignOperation.Value>
-                                                          <InArgument x:TypeArguments="x:Object">[chargedAmount.ToString("####0.00")]</InArgument>
-                                                        </ui:AssignOperation.Value>
-                                                      </ui:AssignOperation>
-                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_59">
-                                                        <ui:AssignOperation.To>
-                                                          <OutArgument x:TypeArguments="x:Object">[newRow("contracted_amount")]</OutArgument>
-                                                        </ui:AssignOperation.To>
-                                                        <ui:AssignOperation.Value>
-                                                          <InArgument x:TypeArguments="x:Object">[contractedAmount.ToString("####0.00")]</InArgument>
-                                                        </ui:AssignOperation.Value>
-                                                      </ui:AssignOperation>
-                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_60">
-                                                        <ui:AssignOperation.To>
-                                                          <OutArgument x:TypeArguments="x:Object">[newRow("difference")]</OutArgument>
-                                                        </ui:AssignOperation.To>
-                                                        <ui:AssignOperation.Value>
-                                                          <InArgument x:TypeArguments="x:Object">[(chargedAmount - contractedAmount).ToString("####0.00")]</InArgument>
-                                                        </ui:AssignOperation.Value>
-                                                      </ui:AssignOperation>
-                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_61">
-                                                        <ui:AssignOperation.To>
-                                                          <OutArgument x:TypeArguments="x:Object">[newRow("difference_pct")]</OutArgument>
-                                                        </ui:AssignOperation.To>
-                                                        <ui:AssignOperation.Value>
-                                                          <InArgument x:TypeArguments="x:Object">[Math.round(100 * Double.parse(newRow("difference").ToString)/chargedAmount,1)]</InArgument>
-                                                        </ui:AssignOperation.Value>
-                                                      </ui:AssignOperation>
-                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_63">
-                                                        <ui:AssignOperation.To>
-                                                          <OutArgument x:TypeArguments="x:Object">[newRow("matches")]</OutArgument>
-                                                        </ui:AssignOperation.To>
-                                                        <ui:AssignOperation.Value>
-                                                          <InArgument x:TypeArguments="x:Object">[matchFound]</InArgument>
-                                                        </ui:AssignOperation.Value>
-                                                      </ui:AssignOperation>
-                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_62">
-                                                        <ui:AssignOperation.To>
-                                                          <OutArgument x:TypeArguments="x:Object">[newRow("approve")]</OutArgument>
-                                                        </ui:AssignOperation.To>
-                                                        <ui:AssignOperation.Value>
-                                                          <InArgument x:TypeArguments="x:Object">[if (Math.Abs(100 * Double.Parse(newRow("difference").ToString)/Double.Parse(newRow("contracted_amount").ToString)) &gt; in_ApprovalThresholdPct, "False", "True")]</InArgument>
-                                                        </ui:AssignOperation.Value>
-                                                      </ui:AssignOperation>
-                                                    </scg:List>
-                                                  </ui:MultipleAssign.AssignOperations>
-                                                  <sap:WorkflowViewStateService.ViewState>
-                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                    </scg:Dictionary>
-                                                  </sap:WorkflowViewStateService.ViewState>
-                                                </ui:MultipleAssign>
-                                                <ui:AddDataRow ArrayRow="{x:Null}" DataRow="[newRow]" DataTable="[out_dt_LookupDetails]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="423,186" sap2010:WorkflowViewState.IdRef="AddDataRow_7">
-                                                  <sap:WorkflowViewStateService.ViewState>
-                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                    </scg:Dictionary>
-                                                  </sap:WorkflowViewStateService.ViewState>
-                                                </ui:AddDataRow>
-                                              </Sequence>
-                                            </FlowStep>
-                                          </FlowStep.Next>
-                                        </FlowStep>
-                                      </FlowDecision.True>
-                                      <FlowDecision.False>
-                                        <FlowStep x:Name="__ReferenceID1">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <av:Point x:Key="ShapeLocation">350,699.5</av:Point>
-                                              <av:Size x:Key="ShapeSize">200,81</av:Size>
-                                              <av:PointCollection x:Key="ConnectorLocation">450,780.5 450,810.5 280,810.5 280,879.5</av:PointCollection>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                          <Sequence DisplayName="No Match/Discrepancy" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_7">
-                                            <sap:WorkflowViewStateService.ViewState>
-                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                              </scg:Dictionary>
-                                            </sap:WorkflowViewStateService.ViewState>
-                                            <Assign sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_8">
-                                              <Assign.To>
-                                                <OutArgument x:TypeArguments="x:Boolean">[matchFound]</OutArgument>
-                                              </Assign.To>
-                                              <Assign.Value>
-                                                <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-                                              </Assign.Value>
-                                            </Assign>
-                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Procedure &quot; + hcpcsCode + &quot; (&quot; + procedureDescription + &quot;) charged amount (&quot; + chargedAmount.ToString + &quot;) does not equal contracted price (&quot; + contractedAmount.ToString + &quot;). Flagging for review.&quot;]">
-                                              <sap:WorkflowViewStateService.ViewState>
-                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                </scg:Dictionary>
-                                              </sap:WorkflowViewStateService.ViewState>
-                                            </ui:LogMessage>
-                                          </Sequence>
-                                          <FlowStep.Next>
-                                            <x:Reference>__ReferenceID0</x:Reference>
-                                          </FlowStep.Next>
-                                        </FlowStep>
-                                      </FlowDecision.False>
-                                    </FlowDecision>
-                                  </FlowStep.Next>
-                                </FlowStep>
-                              </FlowDecision.True>
-                              <FlowDecision.False>
-                                <FlowStep x:Name="__ReferenceID6">
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <av:Point x:Key="ShapeLocation">440,324</av:Point>
-                                      <av:Size x:Key="ShapeSize">200,52</av:Size>
-                                      <av:PointCollection x:Key="ConnectorLocation">640,350 670,350 670,409</av:PointCollection>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Procedure &quot; + hcpcsCode + &quot; not found with description &lt;&quot; + procedureDescription + &quot;&gt; in contracted list. Setting amount equal to 0 and flagging for manual review.&quot;]">
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                  </ui:LogMessage>
-                                  <FlowStep.Next>
-                                    <FlowStep x:Name="__ReferenceID2">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <av:Point x:Key="ShapeLocation">453,409</av:Point>
-                                          <av:Size x:Key="ShapeSize">434,81</av:Size>
-                                          <av:PointCollection x:Key="ConnectorLocation">670,491 670,669.5 450,669.5 450,699.5</av:PointCollection>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                      <Assign sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_3">
-                                        <Assign.To>
-                                          <OutArgument x:TypeArguments="x:Double">[contractedAmount]</OutArgument>
-                                        </Assign.To>
-                                        <Assign.Value>
-                                          <InArgument x:TypeArguments="x:Double">0</InArgument>
-                                        </Assign.Value>
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                      </Assign>
-                                      <FlowStep.Next>
-                                        <x:Reference>__ReferenceID1</x:Reference>
-                                      </FlowStep.Next>
-                                    </FlowStep>
-                                  </FlowStep.Next>
-                                </FlowStep>
-                              </FlowDecision.False>
-                            </FlowDecision>
-                          </FlowStep.Next>
-                        </FlowStep>
-                      </FlowDecision.True>
-                      <FlowDecision.False>
-                        <FlowStep x:Name="__ReferenceID7">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <av:Point x:Key="ShapeLocation">640,214</av:Point>
-                              <av:Size x:Key="ShapeSize">200,52</av:Size>
-                              <av:PointCollection x:Key="ConnectorLocation">740,266 740,296 670,296 670,409</av:PointCollection>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Procedure &quot; + hcpcsCode + &quot; not found in contracted list. Setting amount equal to 0 and flagging for manual review.&quot;]">
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayAfter="0" DelayBefore="0" DisplayName="Type Into 'INPUT txtCptCode'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="510,52" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="111f1a72-3dd5-4547-835c-19583d98de90" Text="[hcpcsCode]" Version="V3">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable BrowserURL="http://healthcare-solutions.westeurope.cloudapp.azure.com:8083/forms/PricingMaster" DesignTimeRectangle="940, 321, 125, 22" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT txtCptCode'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='txtCptCode' tableRow='1' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='txtCptCode' type='text' tag='INPUT' class='' aaname='' /&gt;" Guid="4a962dfb-05c6-453d-900f-2b5c9e3e4d4d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIEAAAAaCAYAAACQAT/QAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABiSURBVGhD7dIxAYAwEAQwZNULRpBQPQjBAw5YmNvbGAAFnyEOsrS1D2qTgCfBtl8U85ngOG+KkAAJkICQAAmQgJAACZCAkAAJkICQAAmQgJAACZCAkID/BNTySkBdEpTXxwSWCmyEfTT5aQAAAABJRU5ErkJggg==" InformativeScreenshot="9311e32564cb4256d7b47701a6974543.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='healthcare-solutions.westeurope.cloudapp.azure.com:8083/forms/PricingMaster' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive" />
+                        </uix:NTypeInto.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NTypeInto>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="0" DelayBefore="0" DisplayName="Click 'Search'" sap:VirtualizedContainerService.HintSize="510,52" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="111f1a72-3dd5-4547-835c-19583d98de90" Version="V3">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="http://healthcare-solutions.westeurope.cloudapp.azure.com:8083/forms/PricingMaster" CvElementArea="1116, 316, 66, 31" CvTextArea="1126, 325, 46, 13" CvTextArgument="Search" CvType="Button" DesignTimeRectangle="1118, 318, 63, 28" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Search'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='Button1' tableRow='1' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='Button1' type='submit' tag='INPUT' class='button-25' aaname='Search' check:text='Search' /&gt;" Guid="27e49c17-c96a-4f29-887c-2c2af13f5263" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEMAAAAgCAYAAABJqsWHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIeSURBVGhD7ZnNTgIxFIV9HhONIaC8hsaFAV259QU0IguMgNGtK5/BF/AJ2Lhn4cIEdiSzmMUEArn2tPNz2/kzmQSw9CZnwbS37fl6OxC612wPyEnJwWDSYDSu+9TovtJBb0D7vb61gj/4hF/uP4aBhsPHId18fNLb6Jvev36sFfzBJ/xyICEMUREPL7JDVrKtgl/4hv8ERkuVju0VYQp+4Rv+YxgnrSd5lrISbBd8w7+DIeRgMDkYTA4GU2UY44D0WAY0yui3Do38VaX5K8GQIAI//YwWNGbP1qUNwvDJE7a9Wflzucg4VjSdsP6TgOZhiwrejrEWNI3yQ6N54ykYC/KWYZOIue8lc5WoAgyPppi0ZCdSuzVbiKSwckIQCThzTAVWqz6eb3yOIMXjyTYDfoEqwIDCxbLQKwXt6cXgKOXtmA7PrDIF62+5kJlfrIowmLRy13c+K3RDBtRcGMXmtgdGLLZ7EkZRmSYQIjjFlbGtMMyzy5R8y5QsBmNoi/+3xyTnBWpUg1ygBo0tMPNlKCIXRtSH5bD5NghDKfWjK6NazD58cVobjEizEcxsMwpwElH7xmHYJAeDycFgcjCYHAymTBi7/IdwCkb9/nknrwrgW4OBv8prV92dvESCb+2qAJcoxxc9OrrsCFJDWTo4S7YK/uATfuFbv0RiQOrnHaqd3VHt9NZeCX/wyUEYMBQQlAzOkO1SRyMB0WwP6BewH2sbY4r7rQAAAABJRU5ErkJggg==" InformativeScreenshot="9f37a477362422ccb9fef20d88d19e58.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='healthcare-solutions.westeurope.cloudapp.azure.com:8083/forms/PricingMaster' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive" />
+                        </uix:NClick.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NClick>
+                      <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dt_PaymentDetails]" DelayAfter="0.1" DelayBefore="0.1" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='HCPC Code' ReferenceName='HCPC Code' ReferenceIdx='0'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Code Description' ReferenceName='Code Description' ReferenceIdx='1'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Contracted Fee' ReferenceName='Contracted Fee' ReferenceIdx='2'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Contract Date' ReferenceName='Contract Date' ReferenceIdx='3'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='HCPC Code' attr='fulltext' /&gt;&lt;column name='Code Description' attr='fulltext' /&gt;&lt;column name='Contracted Fee' attr='fulltext' /&gt;&lt;column name='Contract Date' attr='fulltext' /&gt;&lt;/extract-table&gt;" sap:VirtualizedContainerService.HintSize="510,52" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="111f1a72-3dd5-4547-835c-19583d98de90" Version="V3">
+                        <uix:NExtractData.Target>
+                          <uix:TargetAnchorable DesignTimeRectangle="499, 366, 740, 65" DesignTimeScaleFactor="1" FriendlyName="'HCPC CodeCode'" FullSelectorArgument="&lt;webctrl id='gridPrice' tag='TABLE' /&gt;" Guid="50bbf020-cf50-4a23-b77d-09fd16385ffd" InformativeScreenshot="65427b8339b6a3fb2a535abf965e20d9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='healthcare-solutions.westeurope.cloudapp.azure.com:8083/forms/PricingMaster' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                        </uix:NExtractData.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NExtractData>
+                      <If Condition="[dt_PaymentDetails.Rows(0)(0).Equals(&quot;No Record Found&quot;)]" sap:VirtualizedContainerService.HintSize="510,784" sap2010:WorkflowViewState.IdRef="If_1">
+                        <If.Then>
+                          <Sequence sap:VirtualizedContainerService.HintSize="476,301" sap2010:WorkflowViewState.IdRef="Sequence_4">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                          </ui:LogMessage>
-                          <FlowStep.Next>
-                            <x:Reference>__ReferenceID2</x:Reference>
-                          </FlowStep.Next>
-                        </FlowStep>
-                      </FlowDecision.False>
-                    </FlowDecision>
-                    <x:Reference>__ReferenceID3</x:Reference>
-                    <x:Reference>__ReferenceID4</x:Reference>
-                    <x:Reference>__ReferenceID5</x:Reference>
-                    <x:Reference>__ReferenceID2</x:Reference>
-                    <x:Reference>__ReferenceID6</x:Reference>
-                    <x:Reference>__ReferenceID7</x:Reference>
-                    <x:Reference>__ReferenceID1</x:Reference>
-                    <x:Reference>__ReferenceID8</x:Reference>
-                    <x:Reference>__ReferenceID0</x:Reference>
-                    <x:Reference>__ReferenceID9</x:Reference>
-                  </Flowchart>
-                </Sequence>
-              </ActivityAction>
-            </ui:ForEachRow.Body>
-          </ui:ForEachRow>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;No records retreived for HCPCS Code: &quot; + hcpcsCode + &quot;.&quot;]" />
+                            <Assign sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_4">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Boolean">[recordsFound]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </If.Then>
+                        <If.Else>
+                          <Sequence sap:VirtualizedContainerService.HintSize="476,301" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Retreived Records for HCPCS Code &quot; + hcpcsCode + &quot;:&quot; + Environment.NewLine + String.join(&quot;,&quot;,(From dc in dt_PaymentDetails.Columns.Cast(Of System.Data.DataColumn) Select dc.ColumnName).toArray()) + Environment.NewLine + string.join(Environment.NewLine, dt_PaymentDetails.Rows.Cast(of DataRow).Select(function(row) string.join(&quot;,&quot;,row.ItemArray)))]" />
+                            <Assign sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_5">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Boolean">[recordsFound]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </If.Else>
+                      </If>
+                    </Sequence>
+                    <Flowchart sap:VirtualizedContainerService.HintSize="450,50" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+                      <Flowchart.Variables>
+                        <Variable x:TypeArguments="sd:DataRow" Name="newRow" />
+                        <Variable x:TypeArguments="x:Boolean" Default="False" Name="matchFound" />
+                        <Variable x:TypeArguments="x:String" Name="contractedDescription">
+                          <Variable.Default>
+                            <Literal x:TypeArguments="x:String" Value="" />
+                          </Variable.Default>
+                        </Variable>
+                      </Flowchart.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+                          <av:Size x:Key="ShapeSize">60,75</av:Size>
+                          <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,107.5 480,107.5 480,136.5</av:PointCollection>
+                          <x:Double x:Key="Height">960.5</x:Double>
+                          <x:Double x:Key="Width">890</x:Double>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Flowchart.StartNode>
+                        <x:Reference>__ReferenceID10</x:Reference>
+                      </Flowchart.StartNode>
+                      <FlowDecision x:Name="__ReferenceID10" Condition="[recordsFound]" DisplayName="Records Retrieved?" sap:VirtualizedContainerService.HintSize="105,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <av:Point x:Key="ShapeLocation">427.5,136.5</av:Point>
+                            <av:Size x:Key="ShapeSize">105,87</av:Size>
+                            <av:PointCollection x:Key="TrueConnector">427.5,180 320,180 320,234.00000000000003</av:PointCollection>
+                            <av:PointCollection x:Key="FalseConnector">532.5,180 740,180 740,214</av:PointCollection>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <FlowDecision.True>
+                          <FlowStep x:Name="__ReferenceID4" sap2010:WorkflowViewState.IdRef="FlowStep_1">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <av:Point x:Key="ShapeLocation">220,234.00000000000003</av:Point>
+                                <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                <av:PointCollection x:Key="ConnectorLocation">320,286 320,306.5</av:PointCollection>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:FilterDataTable DataTable="[dt_PaymentDetails]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[dt_LookupMatch]" SelectColumnsMode="Remove">
+                              <ui:FilterDataTable.Filters>
+                                <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                                  <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                                    <ui:FilterOperationArgument.Column>
+                                      <InArgument x:TypeArguments="x:String">["HCPCS Code"]</InArgument>
+                                    </ui:FilterOperationArgument.Column>
+                                    <ui:FilterOperationArgument.Operand>
+                                      <InArgument x:TypeArguments="x:String">[hcpcsCode]</InArgument>
+                                    </ui:FilterOperationArgument.Operand>
+                                  </ui:FilterOperationArgument>
+                                  <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                                    <ui:FilterOperationArgument.Column>
+                                      <InArgument x:TypeArguments="x:String">["Code Description"]</InArgument>
+                                    </ui:FilterOperationArgument.Column>
+                                    <ui:FilterOperationArgument.Operand>
+                                      <InArgument x:TypeArguments="x:String">[procedureDescription]</InArgument>
+                                    </ui:FilterOperationArgument.Operand>
+                                  </ui:FilterOperationArgument>
+                                </scg:List>
+                              </ui:FilterDataTable.Filters>
+                              <ui:FilterDataTable.SelectColumns>
+                                <scg:List x:TypeArguments="InArgument" Capacity="4">
+                                  <x:Null />
+                                </scg:List>
+                              </ui:FilterDataTable.SelectColumns>
+                            </ui:FilterDataTable>
+                            <FlowStep.Next>
+                              <FlowDecision x:Name="__ReferenceID3" Condition="[dt_LookupMatch.RowCount &gt; 0]" DisplayName="Match Found?" sap:VirtualizedContainerService.HintSize="82,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <av:Point x:Key="ShapeLocation">279,306.5</av:Point>
+                                    <av:Size x:Key="ShapeSize">82,87</av:Size>
+                                    <av:PointCollection x:Key="TrueConnector">279,350 220,350 220,424</av:PointCollection>
+                                    <av:PointCollection x:Key="FalseConnector">361,350 440,350</av:PointCollection>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <FlowDecision.True>
+                                  <FlowStep x:Name="__ReferenceID9" sap2010:WorkflowViewState.IdRef="FlowStep_8">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <av:Point x:Key="ShapeLocation">120,424</av:Point>
+                                        <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                        <av:PointCollection x:Key="ConnectorLocation">220,476 220,526.5</av:PointCollection>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="MultipleAssign_7">
+                                      <ui:MultipleAssign.AssignOperations>
+                                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_43">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Double">[contractedAmount]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Double">[Double.Parse(dt_LookupMatch.Rows(0)("Contracted Fee").ToString)]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="AssignOperation_44">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:String">[contractedDescription]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:String">[dt_LookupMatch.Rows(0)("Code Description").ToString]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                        </scg:List>
+                                      </ui:MultipleAssign.AssignOperations>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </ui:MultipleAssign>
+                                    <FlowStep.Next>
+                                      <FlowDecision x:Name="__ReferenceID5" Condition="[contractedAmount = chargedAmount]" DisplayName="Amounts Equal?" sap:VirtualizedContainerService.HintSize="92,87" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <av:Point x:Key="ShapeLocation">174,526.5</av:Point>
+                                            <av:Size x:Key="ShapeSize">92,87</av:Size>
+                                            <av:PointCollection x:Key="FalseConnector">266,570 450,570 450,699.5</av:PointCollection>
+                                            <av:PointCollection x:Key="TrueConnector">174,570 100,570 100,669.5</av:PointCollection>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <FlowDecision.True>
+                                          <FlowStep x:Name="__ReferenceID8" sap2010:WorkflowViewState.IdRef="FlowStep_6">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <av:Point x:Key="ShapeLocation">0,669.5</av:Point>
+                                                <av:Size x:Key="ShapeSize">200,81</av:Size>
+                                                <av:PointCollection x:Key="ConnectorLocation">100,750.5 100,780.5 280,780.5 280,879.5</av:PointCollection>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <Sequence DisplayName="Match Found" sap:VirtualizedContainerService.HintSize="496,324" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <Assign sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_6">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:Boolean">[matchFound]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Procedure &quot; + hcpcsCode + &quot; (&quot; + procedureDescription + &quot;) amount equal to contracted fee: &quot; + chargedAmount.ToString]">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                              </ui:LogMessage>
+                                            </Sequence>
+                                            <FlowStep.Next>
+                                              <FlowStep x:Name="__ReferenceID0" sap2010:WorkflowViewState.IdRef="FlowStep_7">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <av:Point x:Key="ShapeLocation">180,879.5</av:Point>
+                                                    <av:Size x:Key="ShapeSize">200,81</av:Size>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <Sequence DisplayName="Add to Export Table" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ui:MultipleAssign DisplayName="Create Data Row" sap:VirtualizedContainerService.HintSize="423,411" sap2010:WorkflowViewState.IdRef="MultipleAssign_9">
+                                                    <ui:MultipleAssign.AssignOperations>
+                                                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
+                                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_54">
+                                                          <ui:AssignOperation.To>
+                                                            <OutArgument x:TypeArguments="sd:DataRow">[newRow]</OutArgument>
+                                                          </ui:AssignOperation.To>
+                                                          <ui:AssignOperation.Value>
+                                                            <InArgument x:TypeArguments="sd:DataRow">[out_dt_LookupDetails.NewRow()]</InArgument>
+                                                          </ui:AssignOperation.Value>
+                                                        </ui:AssignOperation>
+                                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_55">
+                                                          <ui:AssignOperation.To>
+                                                            <OutArgument x:TypeArguments="x:Object">[newRow("service_code")]</OutArgument>
+                                                          </ui:AssignOperation.To>
+                                                          <ui:AssignOperation.Value>
+                                                            <InArgument x:TypeArguments="x:Object">[hcpcsCode]</InArgument>
+                                                          </ui:AssignOperation.Value>
+                                                        </ui:AssignOperation>
+                                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_56">
+                                                          <ui:AssignOperation.To>
+                                                            <OutArgument x:TypeArguments="x:Object">[newRow("service_date")]</OutArgument>
+                                                          </ui:AssignOperation.To>
+                                                          <ui:AssignOperation.Value>
+                                                            <InArgument x:TypeArguments="x:Object">[serviceDate]</InArgument>
+                                                          </ui:AssignOperation.Value>
+                                                        </ui:AssignOperation>
+                                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_57">
+                                                          <ui:AssignOperation.To>
+                                                            <OutArgument x:TypeArguments="x:Object">[newRow("procedure_description")]</OutArgument>
+                                                          </ui:AssignOperation.To>
+                                                          <ui:AssignOperation.Value>
+                                                            <InArgument x:TypeArguments="x:Object">[procedureDescription]</InArgument>
+                                                          </ui:AssignOperation.Value>
+                                                        </ui:AssignOperation>
+                                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_64">
+                                                          <ui:AssignOperation.To>
+                                                            <OutArgument x:TypeArguments="x:Object">[newRow("contracted_description")]</OutArgument>
+                                                          </ui:AssignOperation.To>
+                                                          <ui:AssignOperation.Value>
+                                                            <InArgument x:TypeArguments="x:Object">[contractedDescription]</InArgument>
+                                                          </ui:AssignOperation.Value>
+                                                        </ui:AssignOperation>
+                                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_58">
+                                                          <ui:AssignOperation.To>
+                                                            <OutArgument x:TypeArguments="x:Object">[newRow("charged_amount")]</OutArgument>
+                                                          </ui:AssignOperation.To>
+                                                          <ui:AssignOperation.Value>
+                                                            <InArgument x:TypeArguments="x:Object">[chargedAmount.ToString("####0.00")]</InArgument>
+                                                          </ui:AssignOperation.Value>
+                                                        </ui:AssignOperation>
+                                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_59">
+                                                          <ui:AssignOperation.To>
+                                                            <OutArgument x:TypeArguments="x:Object">[newRow("contracted_amount")]</OutArgument>
+                                                          </ui:AssignOperation.To>
+                                                          <ui:AssignOperation.Value>
+                                                            <InArgument x:TypeArguments="x:Object">[contractedAmount.ToString("####0.00")]</InArgument>
+                                                          </ui:AssignOperation.Value>
+                                                        </ui:AssignOperation>
+                                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_60">
+                                                          <ui:AssignOperation.To>
+                                                            <OutArgument x:TypeArguments="x:Object">[newRow("difference")]</OutArgument>
+                                                          </ui:AssignOperation.To>
+                                                          <ui:AssignOperation.Value>
+                                                            <InArgument x:TypeArguments="x:Object">[(chargedAmount - contractedAmount).ToString("####0.00")]</InArgument>
+                                                          </ui:AssignOperation.Value>
+                                                        </ui:AssignOperation>
+                                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_61">
+                                                          <ui:AssignOperation.To>
+                                                            <OutArgument x:TypeArguments="x:Object">[newRow("difference_pct")]</OutArgument>
+                                                          </ui:AssignOperation.To>
+                                                          <ui:AssignOperation.Value>
+                                                            <InArgument x:TypeArguments="x:Object">[Math.round(100 * Double.parse(newRow("difference").ToString)/chargedAmount,1)]</InArgument>
+                                                          </ui:AssignOperation.Value>
+                                                        </ui:AssignOperation>
+                                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_63">
+                                                          <ui:AssignOperation.To>
+                                                            <OutArgument x:TypeArguments="x:Object">[newRow("matches")]</OutArgument>
+                                                          </ui:AssignOperation.To>
+                                                          <ui:AssignOperation.Value>
+                                                            <InArgument x:TypeArguments="x:Object">[matchFound]</InArgument>
+                                                          </ui:AssignOperation.Value>
+                                                        </ui:AssignOperation>
+                                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_62">
+                                                          <ui:AssignOperation.To>
+                                                            <OutArgument x:TypeArguments="x:Object">[newRow("approve")]</OutArgument>
+                                                          </ui:AssignOperation.To>
+                                                          <ui:AssignOperation.Value>
+                                                            <InArgument x:TypeArguments="x:Object">[if (Math.Abs(100 * Double.Parse(newRow("difference").ToString)/Double.Parse(newRow("contracted_amount").ToString)) &gt; in_ApprovalThresholdPct, "False", "True")]</InArgument>
+                                                          </ui:AssignOperation.Value>
+                                                        </ui:AssignOperation>
+                                                      </scg:List>
+                                                    </ui:MultipleAssign.AssignOperations>
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                  </ui:MultipleAssign>
+                                                  <ui:AddDataRow ArrayRow="{x:Null}" DataRow="[newRow]" DataTable="[out_dt_LookupDetails]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="423,186" sap2010:WorkflowViewState.IdRef="AddDataRow_7">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                  </ui:AddDataRow>
+                                                </Sequence>
+                                              </FlowStep>
+                                            </FlowStep.Next>
+                                          </FlowStep>
+                                        </FlowDecision.True>
+                                        <FlowDecision.False>
+                                          <FlowStep x:Name="__ReferenceID1" sap2010:WorkflowViewState.IdRef="FlowStep_5">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <av:Point x:Key="ShapeLocation">350,699.5</av:Point>
+                                                <av:Size x:Key="ShapeSize">200,81</av:Size>
+                                                <av:PointCollection x:Key="ConnectorLocation">450,780.5 450,810.5 280,810.5 280,879.5</av:PointCollection>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <Sequence DisplayName="No Match/Discrepancy" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <Assign sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_8">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:Boolean">[matchFound]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Procedure &quot; + hcpcsCode + &quot; (&quot; + procedureDescription + &quot;) charged amount (&quot; + chargedAmount.ToString + &quot;) does not equal contracted price (&quot; + contractedAmount.ToString + &quot;). Flagging for review.&quot;]">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                              </ui:LogMessage>
+                                            </Sequence>
+                                            <FlowStep.Next>
+                                              <x:Reference>__ReferenceID0</x:Reference>
+                                            </FlowStep.Next>
+                                          </FlowStep>
+                                        </FlowDecision.False>
+                                      </FlowDecision>
+                                    </FlowStep.Next>
+                                  </FlowStep>
+                                </FlowDecision.True>
+                                <FlowDecision.False>
+                                  <FlowStep x:Name="__ReferenceID6" sap2010:WorkflowViewState.IdRef="FlowStep_4">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <av:Point x:Key="ShapeLocation">440,324</av:Point>
+                                        <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                        <av:PointCollection x:Key="ConnectorLocation">640,350 670,350 670,409</av:PointCollection>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Procedure &quot; + hcpcsCode + &quot; not found with description &lt;&quot; + procedureDescription + &quot;&gt; in contracted list. Setting amount equal to 0 and flagging for manual review.&quot;]">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </ui:LogMessage>
+                                    <FlowStep.Next>
+                                      <FlowStep x:Name="__ReferenceID2" sap2010:WorkflowViewState.IdRef="FlowStep_3">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <av:Point x:Key="ShapeLocation">453,409</av:Point>
+                                            <av:Size x:Key="ShapeSize">434,81</av:Size>
+                                            <av:PointCollection x:Key="ConnectorLocation">670,491 670,669.5 450,669.5 450,699.5</av:PointCollection>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <Assign sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_3">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:Double">[contractedAmount]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:Double">0</InArgument>
+                                          </Assign.Value>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </Assign>
+                                        <FlowStep.Next>
+                                          <x:Reference>__ReferenceID1</x:Reference>
+                                        </FlowStep.Next>
+                                      </FlowStep>
+                                    </FlowStep.Next>
+                                  </FlowStep>
+                                </FlowDecision.False>
+                              </FlowDecision>
+                            </FlowStep.Next>
+                          </FlowStep>
+                        </FlowDecision.True>
+                        <FlowDecision.False>
+                          <FlowStep x:Name="__ReferenceID7" sap2010:WorkflowViewState.IdRef="FlowStep_2">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <av:Point x:Key="ShapeLocation">640,214</av:Point>
+                                <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                <av:PointCollection x:Key="ConnectorLocation">740,266 740,296 670,296 670,409</av:PointCollection>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Procedure &quot; + hcpcsCode + &quot; not found in contracted list. Setting amount equal to 0 and flagging for manual review.&quot;]">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:LogMessage>
+                            <FlowStep.Next>
+                              <x:Reference>__ReferenceID2</x:Reference>
+                            </FlowStep.Next>
+                          </FlowStep>
+                        </FlowDecision.False>
+                      </FlowDecision>
+                      <x:Reference>__ReferenceID3</x:Reference>
+                      <x:Reference>__ReferenceID4</x:Reference>
+                      <x:Reference>__ReferenceID5</x:Reference>
+                      <x:Reference>__ReferenceID2</x:Reference>
+                      <x:Reference>__ReferenceID6</x:Reference>
+                      <x:Reference>__ReferenceID7</x:Reference>
+                      <x:Reference>__ReferenceID1</x:Reference>
+                      <x:Reference>__ReferenceID8</x:Reference>
+                      <x:Reference>__ReferenceID0</x:Reference>
+                      <x:Reference>__ReferenceID9</x:Reference>
+                    </Flowchart>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEachRow.Body>
+            </ui:ForEachRow>
+          </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
       <uix:NApplicationCard.TargetApp>
@@ -694,10 +741,10 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <ui:FileExistsX DisplayName="File Exists" Exists="[fileExists]" sap:VirtualizedContainerService.HintSize="630,133" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="data\output\claimsLookup.xlsx" />
-    <If Condition="[fileExists]" sap:VirtualizedContainerService.HintSize="630,350" sap2010:WorkflowViewState.IdRef="If_2">
+    <ui:FileExistsX DisplayName="File Exists" Exists="[fileExists]" sap:VirtualizedContainerService.HintSize="658,165" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="data\output\claimsLookup.xlsx" />
+    <If Condition="[fileExists]" sap:VirtualizedContainerService.HintSize="658,358" sap2010:WorkflowViewState.IdRef="If_2">
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="376,168" sap2010:WorkflowViewState.IdRef="Sequence_11">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="376,168" sap2010:WorkflowViewState.IdRef="Sequence_11">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -707,9 +754,9 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_12" />
+        <Sequence DisplayName="Else" sap2010:WorkflowViewState.IdRef="Sequence_12" />
       </If.Else>
     </If>
-    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[out_dt_LookupDetails]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="630,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" WorkbookPath="data\output\claimsLookup.xlsx" />
+    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[out_dt_LookupDetails]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="658,139" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" WorkbookPath="data\output\claimsLookup.xlsx" />
   </Sequence>
 </Activity>
