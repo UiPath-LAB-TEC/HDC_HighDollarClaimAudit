@@ -10,13 +10,13 @@
     "UiPath.Persistence.Activities": "[1.4.4]",
     "UiPath.System.Activities": "[23.4.2]",
     "UiPath.Testing.Activities": "[23.4.1]",
-    "UiPath.UIAutomation.Activities": "[23.4.5]"
+    "UiPath.UIAutomation.Activities": "[24.10.6]"
   },
   "webServices": [],
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "23.4.0.0",
-  "projectVersion": "1.0.141657607",
+  "projectVersion": "1.0.141657609",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,

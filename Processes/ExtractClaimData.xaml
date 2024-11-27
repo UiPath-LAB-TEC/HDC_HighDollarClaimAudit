@@ -105,7 +105,7 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ExtractClaimData" sap:VirtualizedContainerService.HintSize="710,1965" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ExtractClaimData" sap:VirtualizedContainerService.HintSize="1212,1920" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:DateTime[]" Name="datesArray" />
       <Variable x:TypeArguments="scg:List(s:DateTime)" Name="datesList" />
@@ -115,7 +115,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <If Condition="[in_UseDummyData]" sap:VirtualizedContainerService.HintSize="648,1713" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[in_UseDummyData]" sap:VirtualizedContainerService.HintSize="648,1796" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -123,13 +123,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="614,1531" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="578,1435" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Read from Workbook" sap:VirtualizedContainerService.HintSize="572,1443" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Read from Workbook" sap:VirtualizedContainerService.HintSize="544,1375" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <Sequence.Variables>
               <Variable x:TypeArguments="sd:DataTable" Name="dt_ClaimHeaders" />
             </Sequence.Variables>
@@ -138,16 +138,16 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[out_dt_ClaimData]" DisplayName="Read Range - Claim Table" sap:VirtualizedContainerService.HintSize="510,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="DemoItems" WorkbookPath="data\DummyData_ClaimDocument.xlsx" />
-            <If Condition="[in_MaxItems_DummyData &lt; out_dt_ClaimData.RowCount]" sap:VirtualizedContainerService.HintSize="510,352" sap2010:WorkflowViewState.IdRef="If_2">
+            <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[out_dt_ClaimData]" DisplayName="Read Range - Claim Table" sap:VirtualizedContainerService.HintSize="510,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="DemoItems" WorkbookPath="data\DummyData_ClaimDocument.xlsx" />
+            <If Condition="[in_MaxItems_DummyData &lt; out_dt_ClaimData.RowCount]" sap:VirtualizedContainerService.HintSize="510,424" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_7">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+                  <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_2">
                     <Assign.To>
                       <OutArgument x:TypeArguments="sd:DataTable">[out_dt_ClaimData]</OutArgument>
                     </Assign.To>
@@ -158,7 +158,7 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_8">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -167,9 +167,9 @@
                 </Sequence>
               </If.Else>
             </If>
-            <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_ClaimHeaders]" DisplayName="Read Range - Claim Headers" sap:VirtualizedContainerService.HintSize="510,88" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Headers" WorkbookPath="data\DummyData_ClaimDocument.xlsx" />
-            <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="510,90" sap2010:WorkflowViewState.IdRef="Delay_1" />
-            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="510,256" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+            <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_ClaimHeaders]" DisplayName="Read Range - Claim Headers" sap:VirtualizedContainerService.HintSize="510,120" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Headers" WorkbookPath="data\DummyData_ClaimDocument.xlsx" />
+            <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="510,122" sap2010:WorkflowViewState.IdRef="Delay_1" />
+            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="510,288" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
               <ui:MultipleAssign.AssignOperations>
                 <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
@@ -240,7 +240,7 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="492,191" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="492,191" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
